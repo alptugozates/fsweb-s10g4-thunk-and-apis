@@ -9,8 +9,9 @@ import { Provider } from "react-redux";
 import { myReducer } from './reducers';
 import thunk from 'redux-thunk';
 import 'react-toastify/dist/ReactToastify.css';
+import logger from 'redux-logger';
 
-const depo = createStore(myReducer, applyMiddleware(thunk));
+const depo = createStore(myReducer, applyMiddleware(thunk, logger));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
